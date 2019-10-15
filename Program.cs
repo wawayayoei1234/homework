@@ -28,6 +28,7 @@
             int b = 1;
             b = input - b;
             int Ledpi = 0; 
+             Ledpi = b + 1;
             
 
 
@@ -42,7 +43,7 @@
                     d[b] = dd;
                     Console.WriteLine(d[0]+d[1]+d[2]+d[3]+d[4]+d[5]+d[6]+d[7]+d[8]+d[9]);
                     Console.WriteLine(e);
-                    Ledpi = b + 1;
+                   
                     num[b] = 0;    
                      Console.WriteLine("LED "+Ledpi+" OFF");                                           
                   
@@ -54,7 +55,7 @@
                     d[b] = ww;
                     Console.WriteLine(d[0]+d[1]+d[2]+d[3]+d[4]+d[5]+d[6]+d[7]+d[8]+d[9]);
                     Console.WriteLine(e);
-                     Ledpi = b + 1;
+                     
                     num[b] = 1;   
                     Console.WriteLine("LED "+Ledpi+" ON");           
                   }
