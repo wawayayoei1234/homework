@@ -9,6 +9,7 @@ class homewark : IHomework05
             string e = (" 1  2  3  4  5  6  7  8  9  A");
                int x= 0;
                string input = ledNo;
+               string yayo = "eiei";
                 while(x<10){
                      int b = 1;
                      string sum = null;
@@ -246,10 +247,13 @@ class homewark : IHomework05
                     default:
                     Console.WriteLine("please select led 1-10 ");
                     break;
+                    
                 }
                 input = Console.ReadLine();
+                return sum;
+                
             }
-                return ledNo;   
+             return yayo;      
         }
           
     }
