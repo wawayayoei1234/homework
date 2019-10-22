@@ -14,7 +14,7 @@ public class Name : IHomework13
         Console.WriteLine("Hello");
         var f = ($"{c[0]}" =="9" && $"{c[1]}" == "9");
         var g = ($"{c[0]}" !="9" && $"{c[1]}" == "9" && $"{c[2]}" == "9");
-        var h = ($"{c[0]}" !="9" && $"{c[1]}" == "9" && $"{c[2]}" == "9");
+        var h = ($"{c[0]}" !="9" || $"{c[0]}" == "9" && $"{c[1]}" != "9" && $"{c[2]}" == "9" && $"{c[3]}" == "9");
         var i = ($"{c[3]}" =="9" && $"{c[4]}" == "9");
         var j = ($"{c[4]}" =="9" && $"{c[5]}" == "9");
         if (f)
@@ -67,6 +67,10 @@ public class Name : IHomework13
             }
         }else if(h)
         {
+            foreach (var item in c)
+            {
+                Console.Write(item);
+            }
             var h1 = ($"{c[1]}" != "9" && $"{c[4]}" != "9");
             if (h1)
             {
@@ -79,3 +83,4 @@ public class Name : IHomework13
     return 0;
     }
 }
+
