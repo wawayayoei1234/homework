@@ -1,86 +1,114 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
- 
-public class Name : IHomework13
-{
-    public int Homework13(IEnumerable<int> numbers)
-    {
-        
-        int[] a = numbers.ToArray();
-        string b = String.Join(" ", a.Select(p=>p.ToString()).ToArray());
-        string c = $"{b[0]}{b[1]}{b[2]}{b[3]}{b[4]}{b[5]}";
-        Console.WriteLine("Hello");
-        var f = ($"{c[0]}" =="9" && $"{c[1]}" == "9");
-        var g = ($"{c[0]}" !="9" && $"{c[1]}" == "9" && $"{c[2]}" == "9");
-        var h = ($"{c[0]}" !="9" || $"{c[0]}" == "9" && $"{c[1]}" != "9" && $"{c[2]}" == "9" && $"{c[3]}" == "9");
-        var i = ($"{c[3]}" =="9" && $"{c[4]}" == "9");
-        var j = ($"{c[4]}" =="9" && $"{c[5]}" == "9");
-        if (f)
-        {
-            foreach (var item in c)
-            {
-                Console.Write(item);
-            }
-            var f1 = ($"{c[2]}" != "9");
-            if (f1)
-            {
-               var f2_1 = ($"{c[3]}" != "9" && $"{c[4]}" == "9" && $"{c[5]}" == "9");
-               var f2_2 = ($"{c[3]}" == "9" && $"{c[4]}" != "9" && $"{c[5]}" == "9");
-               var f2_3 = ($"{c[3]}" == "9" && $"{c[4]}" == "9" && $"{c[5]}" != "9");
-               var f2_4 = ($"{c[3]}" == "9" && $"{c[4]}" == "9" && $"{c[5]}" == "9");
-               var f2_5 = ($"{c[3]}" == "9" && $"{c[4]}" != "9" && $"{c[5]}" != "9");
-               var f2_6 = ($"{c[3]}" != "9" && $"{c[4]}" == "9" && $"{c[5]}" != "9");
-               var f2_7 = ($"{c[3]}" != "9" && $"{c[4]}" != "9" && $"{c[5]}" == "9");
-               var f2_8 = ($"{c[3]}" == "9" && $"{c[4]}" != "9" && $"{c[5]}" == "9");
-                if (f2_4 || f2_5 || f2_6 || f2_7 || f2_8)
-                {
-                    foreach (var item in c)
-                    {
-                        Console.Write(item);
-                    }
-                }else if(f2_1 || f2_2 || f2_3)
-                {
-                    Console.WriteLine("NO!!!");
-                }
-            }
 
-        }else if (g)
+public interface IHomework13
+{
+    IEnumerable<int> Homework13(IEnumerable<int> numbers);
+}
+public class IHomework : IHomework13
+{
+    public IEnumerable<int> Homework13(IEnumerable<int> numbers)
+    {
+        var result = new List<int>();
+        foreach(var item in numbers)
         {
-            var g1 = ($"{c[0]}" != "9" && $"{c[3]}" != "9");
-            if (g1)
+            var ss = item.ToString();
+            if(ss.Length == 5)
             {
-                var g1_1 = ($"{c[4]}" != "9" && $"{c[5]}" == "9");
-                var g1_2 = ($"{c[4]}" == "9" && $"{c[5]}" != "9");
-                var g1_3 = ($"{c[4]}" == "9" && $"{c[5]}" == "9");
-                if (g1_1 || g1_2)
+                ss = "0" + ss;
+            }
+            else if(ss.Length == 4)
+            {
+                ss = "00" + ss;
+            }
+            else if(ss.Length == 3)
+            {
+                ss = "000" + ss;
+            }
+            else if(ss.Length == 2)
+            {
+                ss = "0000" + ss;
+            }
+            else if(ss.Length == 1)
+            {
+                ss = "00000" + ss;
+            }
+            var d_1 = (ss[0] == '9');
+            var d_2 = (ss[0] != '9');
+            var e_1 = (ss[1] == '9');
+            var e_2 = (ss[1] != '9');
+            var f_1 = (ss[2] == '9');
+            var f_2 = (ss[2] != '9');
+            var g_1 = (ss[3] == '9');
+            var g_2 = (ss[3] != '9');
+            var h_1 = (ss[4] == '9');
+            var h_2 = (ss[4] != '9');
+            var i_1 = (ss[5] == '9');
+            var i_2 = (ss[5] != '9');
+            /* */
+            var hub1 = (d_1 && e_1 && f_2);
+            var hub2 = (d_2 && e_1 && f_1 && g_2);
+            var hub3 = (e_2 && f_1 && g_1 && h_2);
+            var hub4 = (f_2 && g_1 && h_1 && i_2);
+            var hub5 = (g_2 && h_1 && i_1);
+            /*  */
+            if(hub1)
+            {
+                var hub1_1 = (g_1 && h_1 && i_2);
+                var hub1_2 = (g_2 && h_1 && i_1);
+                if (hub1_1 || hub1_2)
                 {
-                    foreach (var item in c)
-                    {
-                        Console.Write(item);
-                    }
-                } else if(g1_3)
+
+                }
+                else
                 {
-                    Console.WriteLine("ม่ายยยยย!!!");
+                    result.Add(item);
                 }
             }
-        }else if(h)
-        {
-            foreach (var item in c)
+            else if(hub2)
             {
-                Console.Write(item);
+                var hub2_1 = (h_1 && i_1);
+                if (hub2_1)
+                {
+
+                }
+                else
+                {
+                    result.Add(item);
+                }
             }
-            var h1 = ($"{c[1]}" != "9" && $"{c[4]}" != "9");
-            if (h1)
+            else if(hub3)
             {
-                // var h1_1 = ();
+                result.Add(item);
+
+            }
+            else if(hub4)
+            {
+                var hub4_1 = (d_1 && e_1);
+                if (hub4_1)
+                {
+
+                }
+                else
+                {
+                    result.Add(item);
+                }
+            }
+            else if(hub5)
+            {
+                var hub5_1 = (d_1 && e_1 && f_2);
+                var hub5_2 = (d_2 && e_1 && f_1);
+                if (hub5_1 || hub5_2)
+                {
+
+                }
+                else
+                {
+                    result.Add(item);
+                }
             }
         }
-
-        
-        /* */
-    return 0;
+        return result;
     }
 }
-
