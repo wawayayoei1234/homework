@@ -13,15 +13,18 @@
 ## HTML vs Markdown
 @snapend
 
-@snap[west span-50]
-
-![](https://sv1.picz.in.th/images/2019/12/05/iZyC2D.jpg)
-@snapend
-
-
-@snap[midpoint span-50]
-![](https://sv1.picz.in.th/images/2019/12/05/iZyuF9.jpg)
-@snapend
+    <h1> Hello </h1>| # Hello
+    <h2> Hi </h2>   | ## Hi
+    <ul>            |
+    <li>Apple</li>  |* Apple
+    <li>Banana</li> |* Banana
+    <li>Orange</li> |* Orange
+    </ul>           |
+# Hello
+## Hi
+* Apple
+* Banana
+* Orange   
 
 ---
 @snap[north span-50]
